@@ -1,4 +1,4 @@
-// MiPrimerFichero.js modificado
+// MiPrimerFichero.js
 // Ejemplo básico de Node.js
 
 // Mostrar un mensaje en la consola
