@@ -18,8 +18,8 @@ async function showProducto(producto) {
     tr.children[1].textContent = producto.name;
     tr.children[2].textContent = producto.description;
     tr.querySelector("button.delete").addEventListener("click", async () => {
-        //await productoService.delete(producto.id); // JSON-Mock
-        await productoService.delete(producto._id); // MongoDB
+        await productoService.delete(producto.id); // JSON-Mock
+        //await productoService.delete(producto._id); // MongoDB
         tr.remove();
     });
     tbody.append(tr);

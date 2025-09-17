@@ -1,5 +1,5 @@
 import { Producto } from "./producto.class.js";
-import { ProductoService } from "./producto-service";
+import { ProductoService } from "./producto-service.js";
 
 const productoService = new ProductoService();
 
