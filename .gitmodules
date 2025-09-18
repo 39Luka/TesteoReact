@@ -1,6 +1,5 @@
-[submodule "UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock/UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock"]
-	path = UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock/UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock
+
+[submodule "UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock"]
+	path = UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock
 	url = https://github.com/marinanavarropina/DIN_25-26.git
-[submodule "UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock/productos_api_jsonmock"]
-	path = UT02_01_Entorno_Trabajo_Ejemplos/productos_api_jsonmock/productos_api_jsonmock
-	url = https://github.com/marinanavarropina/DIN_25-26.git
+
