@@ -385,3 +385,137 @@ function suma() {
 }
 console.log(suma(4, 2)); // 6
 console.log(suma(4, 2, 5, 3, 2, 1, 3)); // 20
+
+/**
+ * Funciones: Función expresión (funciones anónimas)
+ */
+// Ejemplo paso de una función como argumento con funciones anónimas
+var suma = function (a, b) {
+    return a + b;
+};
+var calculando = function (x, y, fn) {
+    return fn(x, y);
+};
+var resultado = calculando(3, 4, suma);
+console.log(resultado); // 7
+
+// No permite hoisting
+permiteHoisting();
+noPermiteHoisting(); // TypeError: undefined
+function permiteHoisting () { 
+    console.log("Función declarada.");
+}
+var noPermiteHoisting = function() {
+    console.log("Función expresión – Funciones anónimas.");
+};
+
+// Función auto-ejecutada (IIFE - Immediately Invoked Function Expression)
+(function() {
+  console.log("Ejecutada al instante");
+})();// Invoca la función inmediatamente.
+
+/**
+ * Funciones: Funciones flecha (arrow functions)
+ */
+// Ejemplo comparativo
+// Con funciones anónimas tradicionales:
+const suma = function(a, b) {
+  return a + b;
+};
+// Con función flecha:
+const suma = (a, b) => a + b;
+
+// Ejemplo usando funciones flecha como parámetro
+function calculando(x, y, fn) {
+  return fn(x, y);
+}
+// Con función anónima:
+let resultado1 = calculando(3, 4, function (a, b) {
+  return a + b;
+});
+// Con función flecha:
+let resultado2 = calculando(3, 4, (a, b) => a + b);
+console.log(resultado1); // 7
+console.log(resultado2); // 7
+
+// Ejemplo número indeterminado de parámetros – acceso con rest
+const suma = (...numeros) => {
+  return numeros.reduce((acc, n) => acc + n, 0);
+};
+console.log(sumaTodos(1, 2, 3, 4)); // 10
+
+/**
+ * Funciones: Alcance de funciones - Call stack y Scope chain
+ */
+// Ejemplo variables globales y locales
+// Aquí vemos que funcionLocal tiene acceso tanto a alfa como a varLocal, porque están en ámbitos superiores.
+var varGlobal = "Soy global";
+function funcionGlobal(alfa) {
+  var varLocal = "Soy local de funcionGlobal";
+  function funcionLocal() {
+    var varLocal = "Soy más local todavía";
+    console.log(varLocal); // "Soy más local todavía"
+    console.log(alfa);     // parámetro recibido por funcionGlobal
+  }
+  funcionLocal();
+  console.log(varLocal);   // "Soy local de funcionGlobal"
+}
+funcionGlobal(2);
+
+// Ejemplo mismo nivel en la call stack:
+// o	El orden de ejecución (call stack) es: global → primera → segunda → tercera.
+// o	La cadena de ámbitos (scope chain) es distinta: 
+//    la función tercera solo accede a sus propias variables y a las del ámbito global, 
+//    pero no a las de primera ni segunda, porque no está escrita dentro de ellas.
+var nombre = "Marina";
+function tercera() {
+  var c = "C ";
+  console.log(c + nombre);
+}
+function segunda() {
+  var b = "B ";
+  tercera();
+  console.log(b + nombre);
+}
+function primera() {
+  var a = "A ";
+  segunda();
+  console.log(a + nombre);
+}
+primera();
+
+// Ejemplo funciones anidadas (scope chain):
+// o	Se puede acceder a todas las variables, porque tercera está definida dentro de segunda, que está dentro de primera.
+var a = "A";
+function primera() {
+  var b = "B";
+  function segunda() {
+    var c = "C";
+    function tercera() {
+      var d = "D";
+      console.log(a, b, c, d); 
+    }
+    tercera();
+  }
+  segunda();
+}
+primera(); // Muestra: A B C D
+
+// Ejemplo cuidado con dónde se define la función:
+// o	Aunque tercera es llamada desde segunda, no tiene acceso a b ni c, 
+//    porque fue declarada en el ámbito global, no dentro de primera o segunda.
+var a = "A"; 
+function primera() {
+  var b = "B";
+  segunda();
+  function segunda() { 
+    var c = "C"; 
+    tercera(); 
+  }
+}
+function tercera() { 
+  var d = "D";
+  console.log(a, b, c, d); // Error: b y c no están en su ámbito
+}
+primera();
+
