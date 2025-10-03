@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- JS code  -->
+        <!-- <script>
+            // Mismo comentario que en Java
+            /**
+                comentario de 
+                múltiple línea
+            */
+            function helloWorld() {
+                alert("Hello World 1!");
+            }
+            helloWorld();
+        </script> -->
+
+        <!-- JS code 2   -->
+        <!-- <script>
+            function helloWorld2() {
+                alert("Hello World 2!");
+            }
+        </script>   -->
+
+        <!-- JS code 3   -->
+        <script>
+            helloWorld3();
+        </script> 
+        <script src="./scripts/helloworld.js"></script>             
+
+        <title>UT02_02 - Sintaxis y Funciones: Ejemplo 1</title>
+    </head>
+    <body>
+        <!-- JS code  -->
+        <!-- <script>
+            function helloWorld() {
+                alert("Hello World 1!");
+            }
+            helloWorld();
+        </script>  -->
+        <h1>Ejemplo 1</h1>
+        <!-- JS code  -->
+        <!-- <script>
+            function helloWorld() {
+                alert("Hello World 1!");
+            }
+            helloWorld();
+        </script>  -->
+
+        <!-- JS code 2  -->
+        <!-- <script>
+            helloWorld2();
+        </script>  -->
+
+        <!-- JS code 3   -->
+        <!-- <script src="./scripts/helloworld.js"></script>  
+        <script>
+            helloWorld3();
+        </script>         -->
+        <h1>Uso de <code>async</code> y <code>defer</code> en scripts</h1>
+
+        <ul>
+            <li><b>Sin <code>async</code> ni <code>defer</code>:</b>
+            <ul>
+                <li>El navegador detiene el parseo del HTML.</li>
+                <li>Carga el JS y lo ejecuta en ese mismo punto.</li>
+                <li>Esto puede hacer que la página tarde más en mostrarse.</li>
+            </ul>
+            </li>
+
+            <li><b>Con <code>async</code> o <code>defer</code>:</b>
+            <ul>
+                <li>El navegador sigue parseando el HTML.</li>
+                <li>Carga el JS en paralelo.</li>
+            </ul>
+            </li>
+
+            <li><b>Con <code>async</code>:</b>
+            <ul>
+                <li>El navegador ejecuta el JS tan pronto como se descarga.</li>
+                <li>Puede ejecutarse antes de que termine de parsear el HTML.</li>
+                <li>El orden de ejecución entre varios scripts <b>no está garantizado</b>.</li>
+            </ul>
+            </li>
+
+            <li><b>Con <code>defer</code>:</b>
+            <ul>
+                <li>El navegador espera a que termine de parsear el HTML para ejecutar el JS.</li>
+                <li>No bloquea el parseo del HTML.</li>
+                <li>Mantiene el <b>orden</b> de los scripts.</li>
+            </ul>
+            </li>
+
+            <li><b>Recomendación:</b>
+            <ul>
+                <li>En general, es mejor usar <code>defer</code> que <code>async</code>, ya que <code>async</code> puede provocar errores si el JS depende del HTML.</li>
+                <li>Si el JS no depende del HTML, se puede usar <code>async</code> para que se ejecute lo antes posible. 
+                    Esto es útil para <b>scripts externos</b> que no dependen del DOM ni de otros scripts (por ejemplo, <i>Google Analytics</i>).</li>
+            </ul>
+            </li>
+        </ul>
+    </body>
+</html>
