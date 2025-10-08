@@ -119,11 +119,11 @@ let x = 10;
 
 let num1 = 3;
 let num2 = 5;
-num2 += num1; // num2 = 8
-num2 -= num1; // num2 = 5
-num2 *= num1; // num2 = 15
-num2 /= num1; // num2 = 5
-num2 %= num1; // num2 = 2
+console.log(num2 += num1); // num2 = 8
+console.log(num2 -= num1); // num2 = 5
+console.log(num2 *= num1); // num2 = 15
+console.log(num2 /= num1); // num2 = 5
+console.log(num2 %= num1); // num2 = 2
 
 /**
  * Operadores: Operadores aritméticos
@@ -132,21 +132,21 @@ num2 %= num1; // num2 = 2
 // Ejemplo prefijo y sufijo
 let x = 5;
 let y;
-y = ++x; // x = 6, y = 6 (incremento antes de la asignación)
-y = x++; // x = 7, y = 6 (incremento después de la asignación)
-y = --x; // x = 6, y = 6 (decremento antes de la asignación)
-y = x--; // x = 5, y = 6 (decremento después de la asignación)
-y = -x;  // y = -5, x = 5 (negación)
+console.log(y = ++x); // x = 6, y = 6 (incremento antes de la asignación)
+console.log(y = x++); // x = 7, y = 6 (incremento después de la asignación)
+console.log(y = --x); // x = 6, y = 6 (decremento antes de la asignación)
+console.log(y = x--); // x = 5, y = 6 (decremento después de la asignación)
+console.log(y = -x);  // y = -5, x = 5 (negación)
 
 // Ejemplo combinado
 let num1 = 5, num2 = 8, resultado1, resultado2;
-resultado1 = ((num1 + num2) * 200) / 100; // cálculo aritmético
-resultado2 = resultado1 % 3;              // resto
-resultado1 = ++num1;
-resultado2 = num2++;
-resultado1 = --num1;
-resultado2 = num2--;
-resultado1 = -resultado2;
+console.log(resultado1 = ((num1 + num2) * 200) / 100); // cálculo aritmético
+console.log(resultado2 = resultado1 % 3);              // resto
+console.log(resultado1 = ++num1);
+console.log(resultado2 = num2++);
+console.log(resultado1 = --num1);
+console.log(resultado2 = num2--);
+console.log(resultado1 = -resultado2);
 
 /**
  * Operadores: Operadores de comparación
