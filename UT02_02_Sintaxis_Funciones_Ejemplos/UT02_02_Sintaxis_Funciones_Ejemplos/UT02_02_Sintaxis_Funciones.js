@@ -32,6 +32,8 @@ console.log(nombre); // undefined
 let saludo = "Hola";
 let persona = 'Ana';
 let mensaje = `${saludo}, ${persona}!`; // interpolación
+console.log(mensaje);
+
 // Ejemplo: multilínea
 let mensaje2 = `Este es un mensaje que ocupa varias líneas
 sin necesidad de caracteres especiales.`;
@@ -379,7 +381,7 @@ console.log(resultado); // 7
 // Ejemplo número indeterminado de argumentos - arguments[]
 function suma() {
   var result = 0;
-  for (var i=0; i<arguments.lenght; i++)
+  for (var i=0; i<arguments.length; i++)
     result += arguments[i];
   return result;
 }
@@ -439,7 +441,7 @@ console.log(resultado1); // 7
 console.log(resultado2); // 7
 
 // Ejemplo número indeterminado de parámetros – acceso con rest
-const suma = (...numeros) => {
+const sumaTodos = (...numeros) => {
   return numeros.reduce((acc, n) => acc + n, 0);
 };
 console.log(sumaTodos(1, 2, 3, 4)); // 10
