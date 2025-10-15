@@ -142,6 +142,7 @@ console.log(fecha.getFullYear()); // 2050
 /* También existen versiones “UTC” (por ejemplo, getUTCFullYear()) que devuelven los valores sin aplicar el huso horario local. */
 console.log(fecha.getMonth());    // 11 (diciembre)
 console.log(fecha.getDate());     // 31
+console.log(fecha.getDay());      // 6 (sábado, los días van de 0 (domingo) a 6 (sábado))
 console.log(fecha.getHours());    // 22
 console.log(fecha.getMinutes());  // 30
 
