@@ -19,8 +19,8 @@ profesora2.edad = 33;
  * Objetos: Propiedades
  */
 console.log(profesora.nombre); // Marina
-console.log(profesora['nombre']); // Marina
-let prop = 'nombre';
+console.log(profesora["nombre"]); // Marina
+let prop = "nombre";
 console.log(profesora[prop]); // Marina
 
 // acceder a una propiedad que no existe
@@ -79,9 +79,9 @@ function muestraNombre({nombre}) {
     console.log('El nombre es ' + nombre[0] + ' y el segundo nombre es ' + nombre[1]);
 }
 muestraNombre(personaToString);
-const { edad, genero: tipo} = personaToString;
-console.log(edad);
-console.log(tipo);
+const { edad: edadDivina, genero: holaQueHaces} = personaToString;
+console.log(edadDivina);
+console.log(holaQueHaces);
 
 /**
  * Objetos: Desestructuración - Spread / Rest ...
