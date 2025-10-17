@@ -107,7 +107,7 @@ console.log(listaCompra);
 console.log('listaCompraJoin: ' + listaCompraJoin);
 
 // .split(separador): Convierte una cadena de texto en un array, dividiendo la cadena en fragmentos según el separador indicado.
-const listaCompraSplitada = listaCompraCadena.split('--separador--'); // Método split()
+const listaCompraSplitada = listaCompraJoin.split('--separador--'); // Método split()
 console.log(listaCompraSplitada);
 
 /**
