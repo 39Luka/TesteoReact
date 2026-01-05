@@ -1,0 +1,16 @@
+{
+  "name": "vitest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest --ui",
+    "coverage": "vitest run --coverage"
+  },
+  "author": "Marina Navarro Pina",
+  "license": "ISC",
+  "description": "Y para finalizar... un poco de Test",
+  "devDependencies": {
+    "@vitest/ui": "^2.1.8",
+    "vitest": "^2.1.8"
+  }
+}
