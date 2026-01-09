@@ -11,7 +11,7 @@ describe("FormularioPeliculaControlado", () => {
 
         // Act: simulamos el envío del formulario sin rellenar nada
         const submitButton = screen.getByRole("button", { name: /Añadir Película/i });
-        await userEvent.click(submitButton);
+        await userEvent.click(submitButton);//await espera hasta que se haga
 
         // Assert: verificamos que aparece el mensaje de error
         const errorMessage = screen.getByText("El nombre es obligatorio.");

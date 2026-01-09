@@ -5,7 +5,7 @@ import List from "../components/List";
 
 describe("Actividad 1 — Componente List", () => {
   test("muestra el nombre recibido por props", () => {
-    // 🧩 Arrange
+    // Arrange
     render( //Renderiza el componente para probarlo
       <List
         foto="actor.jpg"
@@ -16,18 +16,18 @@ describe("Actividad 1 — Componente List", () => {
       </List>
     );
 
-    // 🔍 Act
+    // Act
     //Busca un heading que tenga el aria label leonardo dicaprio
     const heading = screen.getByRole("heading", {
       name: /leonardo dicaprio/i,
     });
 
-    // ✅ Assert
+    // Assert
     expect(heading).toBeInTheDocument(); //Espera que se haya encontrado un heading en el documento
   });
 
   test("si la película tiene nota 10, el título aparece en rojo", () => {
-    // 🧩 Arrange
+    // Arrange
     render( //Renderiza el componente de prueba
       <List
         foto="actor.jpg"
@@ -38,12 +38,12 @@ describe("Actividad 1 — Componente List", () => {
       </List>
     );
 
-    // 🔍 Act
+    // Act
     const heading = screen.getByRole("heading", {
       name: /leonardo dicaprio/i, //Busca el heading con arial label de leonardo dicaprio
     });
 
-    // ✅ Assert
+    // Assert
     expect(heading).toHaveClass("text-red-600"); //Espera que el heading tenga la clase text-red-600
   });
 });

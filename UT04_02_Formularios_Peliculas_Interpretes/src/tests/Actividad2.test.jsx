@@ -5,7 +5,7 @@ import List from "../components/List";
 
 describe("Actividad 2 — Texto Dinámico y Accesibilidad", () => {
   test("muestra correctamente el contenido pasado por children", () => {
-    // 🧩 Arrange
+    // Arrange
     render(
       //Renderiza el componente de prueba
       <List
@@ -17,7 +17,7 @@ describe("Actividad 2 — Texto Dinámico y Accesibilidad", () => {
       </List>
     );
 
-    // 🔍 Act
+    // Act
     //Busca un article que tenga el arial label de scarlett johansson
     const article = screen.getByRole("article", { name: /scarlett johansson/i });
     // Buscar específicamente el p dentro del article
@@ -25,13 +25,13 @@ describe("Actividad 2 — Texto Dinámico y Accesibilidad", () => {
       selector: "p",
     });
 
-    // ✅ Assert
+    // Assert
     //Espera que se haya encontrado
     expect(paragraph).toBeInTheDocument();
   });
 
   test("la imagen tiene el atributo alt correcto basado en el nombre", () => {
-    // 🧩 Arrange
+    // Arrange
     // Renderiza el componente
     render(
       <List
@@ -43,11 +43,11 @@ describe("Actividad 2 — Texto Dinámico y Accesibilidad", () => {
       </List>
     );
 
-    // 🔍 Act
+    // Act
     // Busca los elementos con alt foto de scarlett johansson
     const img = screen.getByAltText(/foto de scarlett johansson/i);
 
-    // ✅ Assert
+    // Assert
     //Espera que se haya encontrado una imagen con ese alt
     expect(img).toBeInTheDocument();
   });
